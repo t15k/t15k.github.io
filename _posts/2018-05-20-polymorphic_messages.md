@@ -1,6 +1,5 @@
 ---
-layout: post
-title:  "Polymorphism and schema technologies"
+title:  Polymorpic messages
 ---
 
 I read the [Confluent blog post] on Single vs multiple types on Kafka topics.

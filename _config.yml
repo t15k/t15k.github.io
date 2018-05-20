@@ -23,6 +23,7 @@ url: "https://t15k.github.io" # the base hostname & protocol for your site, e.g.
 twitter_username: t15k
 github_username:  t15k
 google_analytics: true
+permalink: ":title"
 
 # Build settings
 markdown: kramdown
@@ -30,6 +31,11 @@ theme: minima
 plugins:
   - jekyll-feed
 
+defaults:
+- scope:
+    path: "_posts"
+  values:
+    layout: post
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
