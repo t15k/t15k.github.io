@@ -1,10 +1,17 @@
+---
+title: Jupyter IDE
+
+---
+
 # Jupyter as an IDE for Spark
 
-It's not, some will say. Well, Depends on you definition of IDE. For me, it's
-an environment where I can write my code, test it, interact with
-services which I'm depend on, and finally bundle an ship it. I will
-here stick to proving an example of interacting with Spark and 
-writing some simple spark code.
+It's not, some will say. Well, depends on you definition of IDE. For me, it's an
+environment where I can write my code, test, interspect outout and interact with
+services my code depend on depend on. When working with Spark, jupyer can give
+you that experience with some simple setup. I will in this post stick to proving
+an example of interacting with Spark and writing some simple Spark code - so
+will not go into details in how to bundle for deployments. I may investigate
+that in a future post.
 
 # Getting setup
 
@@ -34,20 +41,19 @@ mkdir my_spark_project
 cd my_spark_project
 git init
 virtualenv venv
-echo venv > .gitignore
-echo "tornado==5.1.1
-jupyter" > requirements.txt
+echo 'venv/' > .gitignore
+echo 'tornado==5.1.1
+jupyter' > requirements.txt
 ```
 
-This need to be done when after creating the virtual environment, and
-every time you want wo work on the project in a shell that has not
-been activated for it yet.
+This need to be done after creating the virtual environment, and every time you
+want wo work on the project in a shell that has not been activated for it yet.
 
 ```bash
 venv/bin/activate
 ```
-With the environment activated install dependencies, this only needs to
-be done the first time.
+With the environment activated install dependencies, this only needs to be done
+the first time.
 
 ```bash
 pip3 install -r requirements.txt
@@ -55,8 +61,8 @@ pip3 install -r requirements.txt
 
 ## Start jupyter
 
-We want to run a Jupiter that is aware of our Spark environment. This can
-be defined through environment variables.
+We want to run a Jupiter that is aware of our Spark environment. This can be
+defined through environment variables.
 
 ```bash
 export PYSPARK_DRIVER_PYTHON=jupyter
@@ -65,7 +71,8 @@ export SPARK_LOCAL_IP=127.0.0.1
 pyspark
 ```
 
-That should launch a jupyter notebook. Let's try it out.
+That should launch a jupyter notebook. Let's try it out. Create a new notebook
+and copy the following into first cell.
 
 ```python
 from pyspark.sql import SparkSession
@@ -76,9 +83,16 @@ fdf = df.filter(df.value == "jupter")
 fdf.show()
 ```
 
-# Done 
+Done
+---
 
-That's is. You should now have something that looks like this.
+That’s it! You should now have something that looks like this.
+
+![Jupyter Screenshot][done image]
+
+By the way. Here’s another external blog entry on the topic: get-started-pyspark-jupyter-guide-tutorial.
+
+[done image]: /assets/img/jupyter_screenshot.png
 
 
 
