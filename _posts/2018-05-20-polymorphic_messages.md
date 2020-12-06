@@ -1,5 +1,7 @@
 ---
 title:  Polymorpic messages
+categories: [data-engineering]
+tags: [spark, jupyter]
 ---
 
 I read the [Confluent blog post] on Single vs multiple types on Kafka topics.
